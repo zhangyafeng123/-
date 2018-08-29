@@ -24,6 +24,22 @@ class ViewController: UIViewController {
         
         let string = "<a href=\"http://app.weibo.com/t/feed/5g0B8s\" rel=\"nofollow\">微博weibo.com</a>"
         
+        string.zyf_href()
+
+    }
+
+    func demo()  {
+        //正则表达式
+        // . 匹配任意字符，回车除外
+        // * 匹配任意多次
+        // ? 尽量少的匹配
+        //正则表达式30分钟快速入门
+        //http://deerchao.net/tutorials/regex/regex.htm#greedyandlazy
+        
+        //<a href=\"http://app.weibo.com/t/feed/5g0B8s\" rel=\"nofollow\">微博weibo.com</a>
+        
+        let string = "<a href=\"http://app.weibo.com/t/feed/5g0B8s\" rel=\"nofollow\">微博weibo.com</a>"
+        
         //2.创建正则表达式
         // pattern - 常说的正则表达式，就是 pattern的写法(匹配方案)
         // 索引:
@@ -60,10 +76,7 @@ class ViewController: UIViewController {
             print("下标\(idx)-\(subStr)")
             
         }
-
     }
-
-    
     
     
     
