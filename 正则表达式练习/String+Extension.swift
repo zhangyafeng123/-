@@ -10,22 +10,21 @@ import Foundation
 
 extension String {
     ///当前字符串中，提取链接和文本
-    func zyf_href()  {
+    /// swift 中提供了 ‘元组’，同时可以返回多个值
+    func zyf_href() -> (link: String, text: String)?  {
         // 0. 匹配方案
         let pattern = "<a href=\"(.*?)\" .*?\">(.*?)</a>"
         // 1. 创建正则表达式，并且匹配第一项
         guard let regx = try? NSRegularExpression(pattern: pattern, options: []),
             let result = regx.firstMatch(in: self, options: [], range: NSRange(location: 0, length: count))
             else {
-            
-            return
+            return nil
         }
         //2.获取结果
         let link = (self as NSString).substring(with: result.range(at: 1))
         let text = (self as NSString).substring(with: result.range(at: 2))
-        
-        print(link + "---" + text)
-        
+                
+        return (link, text)
         
         
     }

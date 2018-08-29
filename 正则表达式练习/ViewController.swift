@@ -24,8 +24,9 @@ class ViewController: UIViewController {
         
         let string = "<a href=\"http://app.weibo.com/t/feed/5g0B8s\" rel=\"nofollow\">微博weibo.com</a>"
         
-        string.zyf_href()
-
+        let result = string.zyf_href()
+        print(result?.text)
+        print(result?.link)
     }
 
     func demo()  {
